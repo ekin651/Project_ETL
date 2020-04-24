@@ -1,0 +1,45 @@
+
+
+
+CREATE TABLE "school_demography" (
+    "id" integer NOT NULL,
+    "school_name" varchar(30)   NOT NULL,
+    "percentage_female" integer   NOT NULL,
+    "percentage_male" integer   NOT NULL,
+    "economic_need_index" integer   NOT NULL,
+    CONSTRAINT "pk_school_demography" PRIMARY KEY (
+        "id"
+     )
+);
+
+CREATE TABLE "school_survey" (
+    "id" integer   NOT NULL,
+    "school_name" varchar(30)   NOT NULL,
+    "instruction_score" integer   NOT NULL,
+	"collaboration_score" integer   NOT NULL,
+	"supportive_environment_score" integer   NOT NULL,
+	"school_leadership_score	" integer   NOT NULL,
+	"family_community_score" integer   NOT NULL,	
+    "positive_score" integer   NOT NULL,
+    CONSTRAINT "pk_school_survey" PRIMARY KEY (
+        "id"
+     )
+);
+
+CREATE TABLE "pupil_teacher_ratio" (
+    "id" integer NOT NULL,
+    "school_name" varchar(30)   NOT NULL,
+    "teacher_ratio" integer   NOT NULL,
+    CONSTRAINT "pk_pupil_teacher_ratio" PRIMARY KEY (
+        "id"
+     )
+);
+
+ALTER TABLE "school_demography" ADD CONSTRAINT "fk_school_demography_id" FOREIGN KEY("id")
+REFERENCES "school_survey" ("id");
+
+ALTER TABLE "pupil_teacher_ratio" ADD CONSTRAINT "fk_pupil_teacher_ratio_id" FOREIGN KEY("id")
+REFERENCES "school_demography" ("id");
+
+
+
