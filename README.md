@@ -2,7 +2,7 @@
 
 
 
-![](images/01_header.png)
+![](images/01_header.PNG)
 ![](images/02_school.png)
 
 ### 1. Background 
@@ -25,7 +25,7 @@ However, in this project, we only focus on the ETL part. The analysis and the vi
 These are the steps we did in achieving the result. 
 
 
-![](images/03_methodology.png)
+![](images/03_methodology.PNG)
 
 
 
@@ -47,7 +47,7 @@ a. First table: pupil_teacher ratio
 In this table, first we rename all columns in this table and we set the index into id. The table columns remain the same
 
 
-![](images/04_table_one.png)
+![](images/04_table_one.PNG)
 
 b. Second table: school_demography
 
@@ -56,7 +56,7 @@ Since the data shows for several years, we narrowed down the data only for 2015-
 And the we rename the columns, format the number, and set ID as index. 
 
 
-![](images/05_table_two.png)
+![](images/05_table_two.PNG)
 
 b. Third table: school_survey
 
@@ -64,7 +64,7 @@ We selected columns that are relevant to our project, which are school survey co
 There are many other interesting criteria in the table (when the score result is divided into several criteria) but due to time limitation, we decided to focus on the survey with numbers. 
 We rename the columns (so it will have the same consistency with other files) and did number formatting. 
 
-![](images/06_table_three.png)
+![](images/06_table_three.PNG)
 
 
 * File output is `etl_project.ipynb` 
@@ -76,7 +76,7 @@ We rename the columns (so it will have the same consistency with other files) an
 We created a new Postgres database. School id becomes the Primary Key and Foreign Key.  
 
 
-![](images/07_diagram_database.png)
+![](images/07_diagram_database.PNG)
 
 
 
