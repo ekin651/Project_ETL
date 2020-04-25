@@ -47,10 +47,13 @@ select * from school_survey
 
 
 -- Join tables on county_id
-SELECT pupil_teacher_ratio.id, pupil_teacher_ratio.school_name, school_demography.percentage_female, school_demography.percentage_male, 
-FROM pupil_teacher_ratio,
-JOIN school_demography
-ON pupil_teacher_ratio.school_demography = school_demography.id;
+SELECT pupil_teacher_ratio.id,  pupil_teacher_ratio.school_name, pupil_teacher_ratio.teacher_ratio, school_demography.percentage_female, school_demography.percentage_male, school_survey.instruction_score, school_survey.collaboration_score, school_survey.supportive_environment_score, school_survey.school_leadership_score, school_survey.family_community_score, school_survey.positive_score 
+FROM pupil_teacher_ratio
+INNER JOIN school_demography
+ON pupil_teacher_ratio.id = school_demography.id
+INNER JOIN school_survey
+ON school_survey.id = pupil_teacher_ratio.id;
+
 
 
 
