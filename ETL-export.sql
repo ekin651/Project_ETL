@@ -1,6 +1,3 @@
-
-
-
 CREATE TABLE "school_demography" (
     "id" integer NOT NULL,
     "school_name" varchar(30)   NOT NULL,
@@ -40,6 +37,22 @@ REFERENCES "school_survey" ("id");
 
 ALTER TABLE "pupil_teacher_ratio" ADD CONSTRAINT "fk_pupil_teacher_ratio_id" FOREIGN KEY("id")
 REFERENCES "school_demography" ("id");
+
+
+select * from pupil_teacher_ratio
+
+select * from school_demography
+
+select * from school_survey
+
+
+-- Join tables on county_id
+SELECT pupil_teacher_ratio.id, pupil_teacher_ratio.school_name, school_demography.percentage_female, school_demography.percentage_male, 
+* from  pupil_teacher_ratio
+INNER JOIN school_demography
+ON pupil_teacher_ratio.school_demography = school_demography.id;
+
+
 
 
 
