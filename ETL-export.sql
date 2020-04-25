@@ -48,8 +48,8 @@ select * from school_survey
 
 -- Join tables on county_id
 SELECT pupil_teacher_ratio.id, pupil_teacher_ratio.school_name, school_demography.percentage_female, school_demography.percentage_male, 
-* from  pupil_teacher_ratio
-INNER JOIN school_demography
+FROM pupil_teacher_ratio,
+JOIN school_demography
 ON pupil_teacher_ratio.school_demography = school_demography.id;
 
 
